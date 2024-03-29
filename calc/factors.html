@@ -1,0 +1,214 @@
+<html>
+	<head>
+		<title>Calculator</title>
+		<script>
+			function countNumbers() {
+				let c = 2;
+				return c;
+			}
+			function getNumbers() {
+				let nums = [];
+				nums[0] = countNumbers();
+				if (true) {
+					nums[1] = document.forms["factorCalculator"]["number1"].value;
+				}
+				if (true) {
+					nums[2] = document.forms["factorCalculator"]["number2"].value;
+				}
+				if (false) {
+					nums[3] = document.forms["factorCalculator"]["number3"].value;
+				}
+				return nums;
+			}
+			function getNumber(n) {
+				if (n == 1) {
+					return document.forms["factorCalculator"]["number1"].value;
+				}
+				if (n == 2) {
+					return document.forms["factorCalculator"]["number2"].value;
+				}
+				if (n == 3) {
+					return document.forms["factorCalculator"]["number3"].value;
+				}
+			}
+			function getPrimeFactors(x){
+				let primes = [];
+				let n = 2;
+				let m = x;
+				while(n <= m) {
+					if(m%n == 0) {
+						m = m/n;
+						primes.push(n);
+					} else {
+						n += 1;
+					}
+				}
+				return primes;
+			}
+			function primeString(x) {
+				const primes = getPrimeFactors(x);
+				let htmlstring = "";
+				let i = 0;
+				let j = 0;
+				let f = 0;
+				let l = primes.length;
+				while(i < l) {
+					f = primes[i];
+					j = 0;
+					while(primes[i+j] == f){
+						j += 1;
+					}
+					if (i != 0){
+						htmlstring += " &middot;";
+					}
+					htmlstring += " " + String(f) + "<sup>" + String(j) + "</sup>";
+					i += j;
+				}
+				return htmlstring;
+			}
+			function getFactors(x){
+				let factors = [];
+				let n = 1;
+				let m = x;
+				while(n < m) {
+					if(x%n == 0) {
+						m = x/n;
+						factors.push(n);
+						factors.push(m);
+					}
+					n += 1;
+				}
+				return factors;
+			}
+			function gcfEuclid(a,b) {
+				let dividend = Math.max(a,b);
+				let divisor = Math.min(a,b);
+				let remainder = dividend%divisor;
+				while(remainder != 0) {
+					dividend = divisor;
+					divisor = remainder;
+					remainder = dividend%divisor;
+				}
+				return divisor;
+			}
+			function getValues(arr) {
+				const l = arr[0];
+				let gcf = gcfEuclid(arr[1],arr[2]);
+				let lcm = arr[1] * arr[2] / gcf;
+				let product = arr[1] * arr[2];
+				let i = 3;
+				while(i <= l) {
+					gcf = gcfEuclid(gcf,arr[j]);
+					let lcm = lcm * arr[j] / gcfEuclid(lcm,arr[j]);
+					product = product * arr[j];
+					j += 1;
+				}
+				return [gcf,lcm,product];
+			}
+			function calculateValues() {
+				const c = countNumbers();
+				numsArr = getNumbers();
+				valuesArr = getValues(numsArr);
+				gcf = valuesArr[0];
+				lcm = valuesArr[1];
+				product = valuesArr[2];
+				document.getElementById("productval").innerHTML = product;
+				document.getElementById("gcfval").innerHTML = gcf;
+				document.getElementById("lcmval").innerHTML = lcm;
+				if (1 <= c) {
+					document.getElementById("primes1").innerHTML = primeString(numsArr[1]);
+					document.getElementById("quotient1").innerHTML = numsArr[1]/gcf;
+				}
+				if (2 <= c) {
+					document.getElementById("primes2").innerHTML = primeString(numsArr[2]);
+					document.getElementById("quotient2").innerHTML = numsArr[2]/gcf;
+				}
+				if (3 <= c) {
+					document.getElementById("primes3").innerHTML = primeString(getNumber(3));
+				}
+			}
+			function addNumber(){
+				alert(String(countNumbers()));
+			}
+			function removeNumber(n) {
+				alert(String(getNumbers()[n]));
+			}
+			function showFactors(n){
+				alert(String(getFactors(getNumber(n))));
+			}
+		</script>
+		<style>
+			body {
+				font-family: "Verdana", "Tahoma", "Trebuchet MS", "Trebuchet", sans-serif;
+			}
+			input {
+				font-family: "Verdana", "Tahoma", "Trebuchet MS", "Trebuchet", sans-serif;
+			}
+			input[type=number] {
+				border: none;
+			}
+			input[type=button] {
+				border: none;
+				background: none;
+			}
+			input.rangeerror {
+				border-bottom-style: solid;
+				border-bottom-width: 2px;
+				border-bottom-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Factors Calculator Module</h1>
+		<form name="factorCalculator">
+			<table>
+				<tr>
+					<td>&Pi;</td>
+					<td><div id="productval">2640</div></td>
+				</tr>
+				<tr>
+					<td>GCF</td>
+					<td><div id="gcfval">4</div></td>
+				</tr>
+				<tr>
+					<td>LCM</td>
+					<td><div id="lcmval">165</div></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td></td>
+					<td>Number</td>
+					<td>Prime Factors</td>
+					<td>&div; GCF</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><input type="button" onclick="removeNumber(1)" value="-"></td>
+					<td><input type="number" id="number1" min="2" max="99999" step="1" value="12" pattern="\d*"></td>
+					<td><div id="primes1">2<sup>2</sup> &middot; 3<sup>1</sup></div></td>
+					<td><div id="quotient1">3</div></td>
+					<td><input type="button" onclick="showFactors(1)" value="factors"></td>
+				</tr>
+				<tr>
+					<td><input type="button" onclick="removeNumber(2)" value="-"></td>
+					<td><input type="number" id="number2" min="2" max="99999" value="220" class="rangeerror"></td>
+					<td><div id="primes2">2<sup>2</sup> &middot; 5<sup>1</sup> &middot; 11<sup>1</sup></div></td>
+					<td><div id="quotient2">55</div></td>
+					<td><input type="button" onclick="showFactors(2)" value="factors"></td>
+				</tr>
+				<a href="#">
+				<tr>
+					<td></td>
+					<td><input type="button" onclick="addNumber()" value="+"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				</a>
+			</table>
+			<input type="button" onclick="calculateValues()" value="Calculate">
+			<input type="button" onclick="alert(getCGFLCM(getNumbers()))" value="Debug">
+		</form>
+	</body>
+</html>
