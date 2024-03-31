@@ -20,41 +20,39 @@
 				border-bottom-width: 2px;
 				border-bottom-color: red;
 			}
+			nav ul {
+			}
+			nav ul li{
+			}
 		</style>
 	</head>
 	<body>
-		<h1>Calculator Modules</h1>
-		<ul>
-			<li><a href="calc/factors.html">Factor Calculator</a></li>
-		</ul>
-		<h1>Tape Feed</h1>
-		<ul>
-			<li>On to-do list</li>
-		</ul>
-		<h1>Reference Modules</h1>
-		<ul>
-			<li><a href="ref/specialProds.html">Special Products</a></li>
-		</ul>
-		<h1>Quick Links</h1>
-		<ul>
-			<li><a href="https://www.desmos.com/calculator">Desmos</a></li>
-			<li><a href="https://www.geogebra.org/geometry">GeoGebra</a></li>
-			<li><a href="https://www.wolframalpha.com/">Wolfram Alpha</a></li>
-			<li><a href="https://chat.openai.com/">ChatGPT</a></li>
-			<li><a href="https://www.google.com/">Google</a></li>
-			<li><a href="https://github.com/luninoid/qcalcc/">Github</a></li>
-			<li><h2>Alternatives</h2></li>
-			<li><a href="https://graph.tk/">Graph.tk</a></li>
-			<li><a href="https://claude.ai/">Claude</a></li>
-			<li><a href="https://www.bing.com/">Bing</a></li>
-		</ul>
-		<h1>To-Do List</h1>
-		<ul>
-			<li>Home page</li>
-			<li>Module Search</li>
-			<li><a href="https://fonts.google.com/specimen/Dongle">Add font</a></li>
-			<li>Tape feed/terminal calculator</li>
-			<li>Flesh out modules</li>
-		</ul>
+		<header>
+			<h1>qCal.cc</h1>
+			<nav>
+				<a href="https://www.desmos.com/calculator" title="Desmos" target="_blank">Desmos</a>
+				<a href="https://www.geogebra.org/geometry" title="GeoGebra" target="_blank">GeoGebra</a>
+				<a href="https://www.wolframalpha.com/" title="Wolfram Alpha" target="_blank">Wolfram Alpha</a>
+				<a href="https://chat.openai.com/" title="ChatGPT" target="_blank">ChatGPT</a>
+				<a href="https://www.google.com/" title="Google" target="_blank">Google</a>
+				<a href="https://github.com/luninoid/qcalcc/" title="Github" target="_blank">Github</a>
+			</nav>
+		</header>
+		
+		<main>
+			<section class="module">
+				<h2>Calculator</h2>
+				<h3>Factors</h3>
+				<iframe src="calc/factors.html"></iframe>
+			</section>
+			<section class="module">
+				<h2>Tape Feed</h2>
+			</section>
+			<section class="module">
+				<h2>Reference</h2>
+				<h3>Special Products</h3>
+				<iframe src="ref/specialProds.html"></iframe>
+			</section>
+		</main>
 	</body>
 </html>
