@@ -11,6 +11,14 @@ input {
 	font-weight: 400;
 	font-style: normal;
 	line-height: 0.5;
+	font-size: 100%;
+}
+td {
+	font-family: "Dongle", "Verdana", "Tahoma", "Trebuchet MS", "Trebuchet", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 0.5;
+	font-size: 200%;
 }
 input[type=number] {
 	border: none;
@@ -34,4 +42,6 @@ a:link, a:visited, a:active, a:hover {
 a:hover {
 	text-decoration: none;
 	color: #777777;
+} .framehide {
+	display: none;
 }
