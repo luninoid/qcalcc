@@ -4,4 +4,4 @@ Online Quick Reference Calculator for Math Teachers
 
 Available online at [qcal.cc](https://qcal.cc)
 
- ![Mockup](/mockup.png)
+ ![Mockup](dev/mockup.png)
