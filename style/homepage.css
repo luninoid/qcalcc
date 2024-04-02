@@ -1,51 +1,50 @@
-			header {
-				width: 100%;
-				vertical-align: middle;
-				border: solid black 1px;
-				margin: none;
-				padding: none;
-				height: 80px;
-			}
-			header h1 {
-				float: left;
-				vertical-align: middle;
-				margin: auto 0;
-			}
-			nav {
-				display: inline-block;
-				float: right;
-				vertical-align: middle;
-				margin: auto 0;
-			}
-			nav a {
-				display: inline-block;
-				vertical-align: middle;
-			} 
-			header:after {
-				content: "";
-				display: table;
-				clear: both;
-			}
+header {
+	width: 100%;
+	vertical-align: middle;
+	margin: none;
+	padding: none;
+	height: 50px;
+}
+header h1 {
+	float: left;
+	vertical-align: middle;
+	margin: 5px;
+}
+nav {
+	display: inline-block;
+	float: right;
+	vertical-align: middle;
+	margin: 10px;
+}
+nav a {
+	display: inline-block;
+	vertical-align: middle;
+} 
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
 
-			main {
-			}
-			main section {
-				float: left;
-				width: 33%;
-			}
-			#tfeed {
-				width: 34%;
-			}
-			main:after {
-				content: "";
-				display: table;
-				clear: both;
-			}
-			iframe {
-				width: 100%;
-				height: calc(100% - 250px);
-				border:none;
-			}
-			footer {
-				text-align: right;
-			}
+main {
+}
+main section {
+	float: left;
+	width: 33%;
+}
+#tfeed {
+	width: 34%;
+}
+main:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+iframe {
+	width: 100%;
+	height: calc(100% - 250px);
+	border:none;
+}
+footer {
+	text-align: right;
+}
