@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+font-family: "Nunito", "Verdana", "Tahoma", "Trebuchet MS", "Trebuchet", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-weight: 800;
+
+https://fonts.google.com/specimen/Nunito
+https://www.cdnfonts.com/primer-print.font
+https://www.cdnfonts.com/bpreplay.font
+https://www.1001fonts.com/kingthings-clarity-font.html
+https://nationalparktypeface.com/Downloads-Donations
+
+http://icon-works.com
