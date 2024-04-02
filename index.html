@@ -1,12 +1,22 @@
 <html>
 	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 		<title>Calculator</title>
 		<style>
 			body {
-				font-family: "Verdana", "Tahoma", "Trebuchet MS", "Trebuchet", sans-serif;
+				font-family: "Dongle", "Verdana", "Tahoma", "Trebuchet MS", "Trebuchet", sans-serif;
+				font-weight: 400;
+				font-style: normal;
+				line-height: 0.5;
+				font-size: 200%;
 			}
 			input {
-				font-family: "Verdana", "Tahoma", "Trebuchet MS", "Trebuchet", sans-serif;
+				font-family: "Dongle", "Verdana", "Tahoma", "Trebuchet MS", "Trebuchet", sans-serif;
+				font-weight: 400;
+				font-style: normal;
+				line-height: 0.5;
 			}
 			input[type=number] {
 				border: none;
@@ -15,14 +25,71 @@
 				border: none;
 				background: none;
 			}
+			input[type=button]:hover {
+				color: #777777;
+			}
 			input.rangeerror {
 				border-bottom-style: solid;
 				border-bottom-width: 2px;
 				border-bottom-color: red;
 			}
-			nav ul {
+			a:link, a:visited, a:active, a:hover {
+				text-decoration: none;
+				color: #000000;
 			}
-			nav ul li{
+			a:hover {
+				text-decoration: none;
+				color: #777777;
+			}
+			header {
+				width: 100%;
+				vertical-align: middle;
+				margin: none;
+				padding: none;
+				height: 80px;
+			}
+			header h1 {
+				float: left;
+				vertical-align: middle;
+				margin: auto 0;
+			}
+			nav {
+				display: inline-block;
+				float: right;
+				vertical-align: middle;
+				margin: auto 0;
+			}
+			nav a {
+				display: inline-block;
+				vertical-align: middle;
+			} 
+			header:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+
+			main {
+			}
+			main section {
+				float: left;
+				width: 33%;
+			}
+			#tfeed {
+				width: 34%;
+			}
+			main:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			iframe {
+				width: 100%;
+				height: calc(100% - 250px);
+				border:none;
+			}
+			footer {
+				text-align: right;
 			}
 		</style>
 	</head>
@@ -38,21 +105,24 @@
 				<a href="https://github.com/luninoid/qcalcc/" title="Github" target="_blank">Github</a>
 			</nav>
 		</header>
-		
 		<main>
-			<section class="module">
+			<section id="calc">
 				<h2>Calculator</h2>
 				<h3>Factors</h3>
 				<iframe src="calc/factors.html"></iframe>
 			</section>
-			<section class="module">
+			<section id="tfeed">
 				<h2>Tape Feed</h2>
+				<p>in development</p>
 			</section>
-			<section class="module">
+			<section id="ref">
 				<h2>Reference</h2>
 				<h3>Special Products</h3>
 				<iframe src="ref/specialProds.html"></iframe>
 			</section>
 		</main>
+		<footer>
+		made by <a href="#" target="_blank">luninoid</a>
+		</footer>
 	</body>
 </html>
