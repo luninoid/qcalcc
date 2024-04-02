@@ -1,5 +1,9 @@
 <html>
 	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="../style/site.css">
+		<link rel="stylesheet" href="../style/homepage.css">
 		<title>Calculator</title>
 		<script>
 			function countNumbers() {
@@ -137,29 +141,9 @@
 				alert(String(getFactors(getNumber(n))));
 			}
 		</script>
-		<style>
-			body {
-				font-family: "Verdana", "Tahoma", "Trebuchet MS", "Trebuchet", sans-serif;
-			}
-			input {
-				font-family: "Verdana", "Tahoma", "Trebuchet MS", "Trebuchet", sans-serif;
-			}
-			input[type=number] {
-				border: none;
-			}
-			input[type=button] {
-				border: none;
-				background: none;
-			}
-			input.rangeerror {
-				border-bottom-style: solid;
-				border-bottom-width: 2px;
-				border-bottom-color: red;
-			}
-		</style>
 	</head>
 	<body>
-		<h1>Factors Calculator Module</h1>
+		<h1 class="framehide">Factors Calculator Module</h1>
 		<form name="factorCalculator">
 			<table>
 				<tr>
