@@ -9,6 +9,7 @@
     - [Wolfram Alpha](https://www.wolframalpha.com/)
 - Large Language Model
     - [ChatGPT](https://chat.openai.com/)
+    - [Meta.ai](https://www.meta.ai/)
     - [HuggingChat](https://huggingface.co/chat)
     - [Claude](https://claude.ai)
 - Search Engine
