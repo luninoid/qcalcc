@@ -1,0 +1,131 @@
+/* Reserve right-hand space for controls on every print preview. */
+.printout-tags { display:flex; flex-wrap:wrap; align-items:baseline; gap:0; }
+.printout-kind, .printout-cards .printout-kind, .print-preview-bar .printout-kind { display:inline-block; margin:0; padding:0; border:0; color:var(--accent); font:400 8px "Bion","IBM Plex Sans",sans-serif; letter-spacing:0; text-transform:uppercase; }
+.printout-kind::before { content:"\00a0\00b7\00a0"; margin:0; }
+.printout-tags > small, .printout-tags > span { font:400 8px "Bion","IBM Plex Sans",sans-serif; letter-spacing:0; text-transform:uppercase; }
+.preview-layout { display:flex; align-items:flex-start; justify-content:center; gap:28px; padding-right:180px; }
+.preview-layout .print-sheet { flex:none; margin:34px 0 70px; }
+.preview-layout:has(.drill-controls) { padding-right:0; }
+.drill-controls { flex:0 0 180px; margin-top:34px; font:13px "IBM Plex Sans",Arial,sans-serif; }
+.drill-controls h2 { font-size:22px; }
+.drill-controls fieldset { border:0; border-top:1px solid var(--line); padding:14px 0; margin:0; }
+.drill-controls legend { font-family:"Bion",sans-serif; padding-right:8px; }
+.digit-control { display:flex; align-items:center; justify-content:space-between; margin:8px 0; gap:10px; }
+.digit-stepper { display:flex; width:62px; border:1px solid var(--line); }
+.digit-stepper input { width:38px; min-width:0; border:0; background:var(--panel); color:var(--ink); padding:5px; appearance:textfield; -moz-appearance:textfield; }
+.digit-stepper input::-webkit-inner-spin-button { appearance:none; }
+.digit-stepper>span { display:grid; }
+.digit-stepper button { font-size:8px; padding:1px 5px; border:0; border-left:1px solid var(--line); background:var(--panel); color:var(--ink); cursor:pointer; }
+.digit-stepper button:disabled { opacity:.25; cursor:default; }
+.operation-controls label { display:block; margin:8px 0; }
+.drill-status { font-size:11px; line-height:1.5; color:var(--muted); }
+.sheet-actions { display:flex; flex-direction:column; align-items:flex-start; gap:8px; margin-bottom:22px; }
+.sheet-actions button { border:0; background:none; padding:5px 0; font:12px "Bion",sans-serif; text-transform:uppercase; cursor:pointer; }
+.sheet-actions .print-action { color:#4f9b55; }
+.sheet-actions .help-action { color:#856500; }
+.sheet-actions .clear-action { color:var(--accent); }
+.sheet-actions button:hover { color:var(--ink); text-decoration:none; }
+.dynamic-sheet .drill-title h1 { font-size:26pt; letter-spacing:-1px; }
+.drill-title .name-field { display:flex; align-items:baseline; gap:.08in; margin-top:.1in; }
+.drill-title .name-line { display:inline-block; width:2in; height:1em; border-bottom:1px solid #111; }
+.drill-grid { display:grid; grid-template-columns:repeat(var(--drill-columns),minmax(0,1fr)); grid-template-rows:repeat(var(--drill-rows),minmax(0,1fr)); height:8.7in; gap:.16in .28in; padding-top:.25in; }
+.drill-problem { position:relative; padding:.18in .08in 0 .24in; break-inside:avoid; }
+.problem-index { position:absolute; top:0; left:0; font:8pt "IBM Plex Sans",sans-serif; color:#666; }
+.stacked-problem { display:grid; width:max-content; min-width:1in; margin-left:auto; font:17pt/1.4 "IBM Plex Mono",monospace; text-align:right; }
+.stacked-bottom { position:relative; border-bottom:1.5px solid #111; padding-left:.3in; }
+.stacked-bottom b { position:absolute; left:0; font-weight:400; }
+.division-problem { display:flex; justify-content:center; font:17pt/1.5 "IBM Plex Mono",monospace; padding-top:.12in; }
+.division-dividend { border-top:1.5px solid #111; border-left:1.5px solid #111; padding:0 .07in; margin-left:.07in; }
+.paper-title.unified-title { display:block; }
+.sheet-heading-row { display:flex; align-items:center; justify-content:space-between; gap:.15in; margin-bottom:.1in; }
+.paper-title .sheet-wordmark { display:flex; align-items:center; white-space:nowrap; gap:5px; }
+.wordmark-text { display:flex; align-items:baseline; gap:0; }
+.sheet-wordmark img { width:25px; height:30px; object-fit:contain; filter:grayscale(1); }
+.paper-title .sheet-wordmark b { font:700 13pt "Bion",sans-serif; letter-spacing:-.4px; }
+.paper-title .sheet-wordmark span { font:400 10.5pt "Bion",sans-serif; text-transform:none; letter-spacing:0; }
+.paper-title .sheet-heading-row .name-field { display:flex; align-items:baseline; justify-content:flex-end; gap:.08in; margin:0; font:400 10.5pt "Bion",sans-serif; color:#111; white-space:nowrap; }
+.paper-title .sheet-heading-row .name-line { display:inline-block; width:2.4in; height:1em; border-bottom:1px solid #111; transform:translateY(3px); }
+.unified-title + .planes-grid { height:8.8in; }
+.print-key-option { display:block; margin-top:20px; }
+.print-key-note { font-size:11px; color:var(--muted); line-height:1.5; }
+.worksheet-hidden { display:none!important; }
+.column-answer { display:block; padding-top:.04in; text-align:right; }
+.answer-key-sheet .division-dividend { position:relative; }
+.division-answer { position:absolute; right:.07in; bottom:100%; padding-bottom:2px; white-space:nowrap; }
+.division-remainder { position:absolute; left:100%; bottom:0; margin-left:.5ch; font:inherit; line-height:inherit; white-space:nowrap; }
+.column-carries { display:block; height:.7em; line-height:.7; white-space:nowrap; text-align:right; }
+.column-carries>span { display:inline-block; width:1ch; text-align:center; }
+.column-carries small { font-size:.6em; }
+.partial-product { display:block; text-align:right; }
+.sum-partials { border-top:1.5px solid #111; }
+.borrow-top { padding-top:.65em; }
+.borrow-digit { position:relative; display:inline-block; width:1ch; text-align:center; }
+.borrow-digit small { position:absolute; bottom:85%; left:50%; transform:translateX(-50%); font-size:.6em; line-height:1; }
+.borrow-digit s { position:relative; display:inline-block; text-decoration:none; }
+.borrow-digit s::after { content:""; position:absolute; left:-10%; top:50%; width:120%; height:0; border-top:1px solid currentColor; transform:rotate(-55deg); transform-origin:center; }
+.magnitude-note { display:block; margin-top:8px; font:8pt "IBM Plex Sans",sans-serif; }
+.magnitude-work { margin-top:5px; font-size:12pt; line-height:1.1; }
+.solutions-option { display:block; margin:8px 0 0 16px; }
+.solutions-option:has(input:disabled) { color:var(--muted); }
+.division-work { position:absolute; top:100%; left:.07in; font:inherit; line-height:1.05; white-space:nowrap; }
+.division-step { height:1.05em; }
+.division-step>span { position:relative; display:inline-block; text-align:right; box-sizing:border-box; }
+.division-subtract { border-bottom:1px solid #111; }
+.division-subtract i { position:absolute; right:100%; font-style:normal; }
+@media screen and (max-width:1150px) { .preview-layout,.preview-layout:has(.drill-controls) { justify-content:flex-start; padding-right:0; gap:20px; overflow-x:auto; } }
+@media screen and (max-width:850px) { .preview-layout:has(.drill-controls) { flex-direction:column-reverse; } .drill-controls { width:100%; flex:auto; max-width:500px; } }
+@media print { .preview-layout,.preview-layout:has(.drill-controls) { display:block; padding:0; margin:0; } .drill-controls { display:none!important; } .preview-layout .print-sheet { margin:0; } .drill-grid { height:8.7in; } }
+
+/* Algebra and literal-equation practice sheets */
+.algebra-preview { gap:28px; }
+.algebra-controls fieldset { margin:0; }
+.variable-input-label { display:block; margin:8px 0 5px; }
+.variable-input { width:100%; box-sizing:border-box; padding:7px 8px; border:1px solid var(--line); background:var(--panel); color:var(--ink); font:13px "IBM Plex Mono",monospace; }
+.algebra-controls fieldset small { display:block; margin-top:6px; color:var(--muted); font-size:10px; line-height:1.45; }
+.algebra-options label { display:block; margin:8px 0; }
+.algebra-drill-title h1 { font-size:25pt; }
+.algebra-drill-grid { display:grid; grid-template-columns:repeat(var(--algebra-columns,2),minmax(0,1fr)); grid-template-rows:repeat(var(--algebra-rows,5),minmax(0,1fr)); gap:.16in .28in; height:8.65in; padding-top:.16in; }
+.algebra-problem { position:relative; min-width:0; padding:.12in .08in .08in .25in; break-inside:avoid; }
+.algebra-prompt { min-height:.5in; font:12pt/1.55 "IBM Plex Mono",monospace; white-space:pre-wrap; }
+.algebra-workspace { display:flex; flex-direction:column; gap:.22in; margin-top:.12in; }
+.algebra-answer { margin-top:.08in; padding:.04in 0; font:600 11pt/1.4 "IBM Plex Mono",monospace; color:#111; }
+.algebra-worked { margin:.04in 0 0; font:8pt/1.35 "IBM Plex Mono",monospace; white-space:pre-wrap; color:#333; }
+@media screen and (max-width:850px) { .algebra-drill-grid { grid-template-columns:1fr; grid-template-rows:none; height:auto; } .algebra-problem { min-height:1.5in; } }
+@media print { .algebra-drill-grid { grid-template-columns:repeat(var(--algebra-columns,2),minmax(0,1fr)); grid-template-rows:repeat(var(--algebra-rows,5),minmax(0,1fr)); height:8.65in; } .algebra-problem { min-height:0; } }
+
+.answer-key-sheet .algebra-workspace { display:none; }
+.answer-key-sheet .algebra-worked { font-size:7pt; line-height:1.25; }
+
+.algebra-drill-grid.large-systems .algebra-prompt { font-size:10pt; }
+.algebra-drill-grid.large-systems .algebra-answer { font-size:9pt; }
+.algebra-drill-grid.large-systems .algebra-worked { font-size:6.5pt; }
+
+/* Shared preview navigation for every static and dynamic sheet. */
+.print-preview-bar { justify-content:flex-start; gap:16px; }
+.print-preview-back { flex:none; align-self:center; color:var(--ink); font:400 18px/1 "IBM Plex Sans",sans-serif; text-decoration:none; padding:8px 4px; }
+.print-preview-back:hover { color:var(--accent); }
+.print-preview-back:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+
+@font-face { font-family:"OpenMoji Black"; src:url("../vendor/openmoji-black.woff2") format("woff2"); font-style:normal; font-weight:400; font-display:block; }
+@font-face { font-family:"OpenMoji Color"; src:url("../vendor/openmoji-color.woff2") format("woff2"); font-style:normal; font-weight:400; font-display:block; }
+.emoji-variable { display:inline-block; font-family:"OpenMoji Black",sans-serif; font-size:1em; font-weight:400; font-style:normal; line-height:inherit; vertical-align:baseline; }
+.algebra-sheet.color-emoji .emoji-variable { font-family:"OpenMoji Color","Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif; }
+.full-color-emoji-option { display:block; margin:8px 0; }
+@media print { .emoji-variable { print-color-adjust:exact; -webkit-print-color-adjust:exact; } }
+
+.paper-title .wordmark-text { gap:7px; }
+
+.variable-presets { margin:8px 0; }
+.variable-presets summary { cursor:pointer; font-family:"Bion",sans-serif; }
+.variable-preset-buttons { display:flex; flex-direction:column; align-items:flex-start; gap:4px; padding:8px 0 4px; }
+.variable-preset-buttons button { border:0; background:none; padding:4px 0; color:var(--ink); font:12px "Bion",sans-serif; text-align:left; cursor:pointer; }
+.variable-preset-buttons button:hover { color:var(--accent); }
+.variable-preset-buttons button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+
+.system-equations { position:relative; padding-left:1.05em; }
+.system-line { display:block; }
+.system-brace { position:absolute; top:0; left:0; width:.7em; height:100%; overflow:visible; color:inherit; }
+.system-brace path { fill:none; stroke:currentColor; stroke-width:1; vector-effect:non-scaling-stroke; }
+
+/* The Plex subset has U+2193 but no U+2190; rotate its supported glyph. */
+.print-preview-back .print-preview-arrow { display:block; color:inherit; font:inherit; text-transform:none; letter-spacing:0; transform:rotate(90deg); }

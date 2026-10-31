@@ -1,41 +1,43 @@
-<html>
-	<head>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="stylesheet" href="style/site.css">
-		<link rel="stylesheet" href="style/homepage.css">
-		<title>Calculator</title>
-	</head>
-	<body>
-		<header>
-			<h1>qCal.cc</h1>
-			<nav>
-				<a href="https://www.desmos.com/calculator" title="Desmos" target="_blank">Desmos</a>
-				<a href="https://www.geogebra.org/geometry" title="GeoGebra" target="_blank">GeoGebra</a>
-				<a href="https://www.wolframalpha.com/" title="WolframAlpha" target="_blank">WolframAlpha</a>
-				<a href="https://chat.openai.com/" title="ChatGPT" target="_blank">ChatGPT</a>
-				<a href="https://www.google.com/" title="Google" target="_blank">Google</a>
-				<a href="https://github.com/luninoid/qcalcc/" title="Github" target="_blank">Github</a>
-			</nav>
-		</header>
-		<main>
-			<section id="calc">
-				<h2>Calculator</h2>
-				<h3>Factors</h3>
-				<iframe src="calc/factors.html"></iframe>
-			</section>
-			<section id="tfeed">
-				<h2>Tape Feed</h2>
-				<textarea readonly id="feed">in development</textarea>
-			</section>
-			<section id="ref">
-				<h2>Reference</h2>
-				<h3>Special Products</h3>
-				<iframe src="ref/specialProds.html"></iframe>
-			</section>
-		</main>
-		<footer>
-		made by luninoid
-		</footer>
-	</body>
-</html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A compact collection of math calculators, a tape feed, and printable reference sheets.">
+  <title>qCal.cc</title>
+  <link rel="icon" type="image/png" href="quokka-mark.png">
+  <script>try{if(localStorage.getItem("qcal.theme")==="dark")document.documentElement.dataset.theme="dark";}catch(e){}</script>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<main class="qcal-home" data-mobile-section="calculator">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="qCal.cc home"><span class="quokka-mark" role="img" aria-label="Playful quokka mascot"></span><span>qCal.cc</span></a>
+    <nav class="quicklinks" id="quicklinks" aria-label="Site tools"></nav>
+  </header>
+  <div class="workspace" id="top">
+    <section class="column calculator-column" id="calculator-panel" role="tabpanel" data-mobile-panel="calculator" aria-labelledby="calculator-title">
+      <div class="column-heading"><div class="column-title-switch"><h1 id="calculator-title"><button type="button" class="mobile-column-trigger" data-mobile-trigger="calculator" aria-haspopup="menu" aria-expanded="false">Calculator<span class="mobile-column-arrow">↓</span></button></h1><div class="mobile-column-menu" role="menu" hidden></div></div><button type="button" class="column-action clear-action" id="calculator-clear">CLEAR</button></div>
+      <div id="calculator-picker"></div><div id="calculator-body"></div>
+    </section>
+    <section class="column tape-column" id="tape-panel" role="tabpanel" data-mobile-panel="tape" aria-labelledby="tape-title">
+      <div class="column-heading"><div class="column-title-switch"><h2 id="tape-title"><button type="button" class="mobile-column-trigger" data-mobile-trigger="tape" aria-haspopup="menu" aria-expanded="false">Paper Tape<span class="mobile-column-arrow">↓</span></button></h2><div class="mobile-column-menu" role="menu" hidden></div></div><div class="tape-actions"><button class="column-action print-action" id="tape-print">PRINT</button><button class="column-action help-action" id="tape-help">HELP</button><button class="column-action clear-action" id="tape-clear">CLEAR</button></div></div>
+      <form class="terminal-form" id="terminal-form"><span>&gt;</span><input id="terminal-input" placeholder="Enter an expression or command" spellcheck="false" aria-label="Tape expression"><button type="submit" title="Evaluate expression" aria-label="Evaluate expression">↵</button></form>
+      <div class="tape-footer"><button type="button" id="tape-older" aria-label="Show older tape input">↓ older</button><button type="button" id="tape-later" aria-label="Show newer tape input">↑ newer</button></div><div class="tape-window" id="tape-window"></div>
+    </section>
+    <section class="column reference-column" id="reference-panel" role="tabpanel" data-mobile-panel="reference" aria-labelledby="reference-title">
+      <div class="column-heading"><div class="column-title-switch"><h2 id="reference-title"><button type="button" class="mobile-column-trigger" data-mobile-trigger="reference" aria-haspopup="menu" aria-expanded="false">Reference<span class="mobile-column-arrow">↓</span></button></h2><div class="mobile-column-menu" role="menu" hidden></div></div><a class="column-action print-action" id="reference-print" href="printouts.html">PRINT</a></div>
+      <div id="reference-picker"></div><div id="reference-body"></div>
+    </section>
+  </div>
+  <footer><span>qCal.cc</span><span><a href="https://github.com/luninoid/qcalcc" target="_blank" rel="noreferrer">maintained by luninoid</a></span></footer>
+</main>
+<script src="assets/reference-data.js"></script>
+<script src="assets/tape-math.js"></script>
+<script src="vendor/math.min.js"></script>
+<script src="assets/equation-solver.js"></script>
+<script src="assets/tape-advanced.js"></script>
+<script src="assets/tape-visual.js"></script>
+<script src="assets/quicklinks.js"></script>
+<script src="assets/app.js"></script>
+</body></html>
